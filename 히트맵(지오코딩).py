@@ -34,7 +34,7 @@ df_box['SIG_KOR_NM']=''
 
 
 #위경도로부터 역 지오코딩하여 시군구 추출
-gmaps_key = 'AIzaSyBm4ymMNoNW6zoFhGZhAoB_jSUrShAS7KM'
+gmaps_key = ''
 gmaps = googlemaps.Client(key=gmaps_key) #구글맵 인증
 #1000건 당 6013원, 누적됨
 
