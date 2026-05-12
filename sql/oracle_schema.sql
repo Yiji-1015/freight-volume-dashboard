@@ -1,0 +1,39 @@
+-- Clean Oracle schema for the portfolio version of the freight dashboard.
+-- The sample CSVs in data/raw mirror these table shapes.
+
+CREATE TABLE KYO_CU_MST (
+    CU_ID        VARCHAR2(20) PRIMARY KEY,
+    CU_NM        VARCHAR2(100) NOT NULL,
+    CU_ADD       VARCHAR2(600),
+    SIG_CD       VARCHAR2(10),
+    SIG_KOR_NM   VARCHAR2(100),
+    LAT_NO       NUMBER(12, 9),
+    LON_NO       NUMBER(12, 9),
+    INDUSTRY     VARCHAR2(50),
+    REGION_GROUP VARCHAR2(50)
+);
+
+CREATE TABLE KYO_OUT (
+    OUT_ID       VARCHAR2(20) PRIMARY KEY,
+    STO_NM       VARCHAR2(100) NOT NULL,
+    SHIP_YM      VARCHAR2(7) NOT NULL,
+    SERVICE_TYPE VARCHAR2(30),
+    ORDER_CNT    NUMBER(12, 0),
+    BOX_TOT      NUMBER(38, 3),
+    WEIGHT_KG    NUMBER(38, 2)
+);
+
+CREATE TABLE GEO_BOX (
+    CU_NM        VARCHAR2(100),
+    STO          VARCHAR2(100),
+    ADDR         VARCHAR2(600),
+    LAT_NO       NUMBER(12, 9),
+    LON_NO       NUMBER(12, 9),
+    BOX_TOT      NUMBER(38, 3),
+    INDUSTRY     VARCHAR2(50),
+    REGION_GROUP VARCHAR2(50)
+);
+
+CREATE INDEX IDX_KYO_OUT_STO_NM ON KYO_OUT (STO_NM);
+CREATE INDEX IDX_KYO_OUT_SHIP_YM ON KYO_OUT (SHIP_YM);
+CREATE INDEX IDX_KYO_CU_MST_SIG_CD ON KYO_CU_MST (SIG_CD);
