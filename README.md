@@ -73,7 +73,7 @@ GROUP BY CU_NM, CU_ADD;
 
 ## Preview
 
-![Freight volume demo map](assets/demo_map_preview.png)
+<img width="940" height="390" alt="image" src="https://github.com/user-attachments/assets/f67a26ae-5eb4-4e3b-a95a-eec53e8a7b2e" />
 
 
 ## Notes
