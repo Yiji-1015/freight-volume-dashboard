@@ -64,32 +64,10 @@ GROUP BY CU_NM, CU_ADD;
 
 샘플 데이터는 실제 고객명, 주소, 물동량을 포함하지 않습니다.
 
-## Demo Run
-
-원본 코드는 Oracle DB, Google Maps API key, 로컬 파일 경로가 필요합니다. 공개 환경에서 간단히 흐름을 확인하려면 아래 보조 스크립트를 사용할 수 있습니다.
-
-```bash
-pip install -r requirements.txt
-python scripts/generate_sample_data.py
-python scripts/build_demo_map.py
-```
-
-생성 결과:
-
-```text
-outputs/freight_volume_demo_map.html
-```
-
 ## Preview
 
 ![Freight volume demo map](assets/demo_map_preview.png)
 
-## Oracle Reference
-
-포트폴리오 검토용으로 원본 흐름을 정리한 SQL 파일을 함께 포함했습니다.
-
-- `sql/oracle_schema.sql`: Oracle 테이블 구조 예시
-- `sql/sample_queries.sql`: 거래처별, 월별, 지역별 물동량 집계 쿼리
 
 ## Notes
 
